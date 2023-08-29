@@ -23,7 +23,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
 
     <nav class="flex justify-between mb-4 items-center">
         <a href="/"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /></a>
-        <ul class="flex justify-end items-center gap-5 text-md font-bold h-[2.5em] min-w-[75vw] px-5 md:text-lg">
+        <ul class="flex justify-end items-center gap-8 text-md font-bold h-[2.5em] min-w-[75vw] px-5 md:text-lg">
             @auth
             <li class="grow shrink">
                 <span class="font-bold uppercase"> Welcome {{ auth()->user()->name }} </span>
@@ -32,7 +32,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
                 <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                     Manage listings</a>
             </li>
-            <li class="grow shrink">
+            <li class="grow sm:shrink">
 
                 <form method="POST" action="/logout" class="inline">
                     @csrf
@@ -45,10 +45,10 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
 
             </li>
             @else
-            <li class="grow shrink">
+            <li class="shrink">
                 <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
             </li>
-            <li class="grow shrink">
+            <li class="shrink">
                 <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login</a>
             </li>
